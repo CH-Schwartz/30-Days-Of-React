@@ -38,11 +38,11 @@ const skills = [ 'CSS','HTML', 'Sass','JS','React','Redux','Node','MongoDB']
 const skillsFormatted = skills.map((skills) => <div style={skillButton}>{skills}</div>)
 
 // JSX element, main
-const Main = () => (
+const Main = (props) => (
   <main>
     <div className='main-wrapper'>
       <h3 style={{ paddingLeft: '35px'}}>Skills Include:</h3>
-      <p style={{ paddingLeft: '35px'}}>{skillsFormatted}</p>
+      <p style={{ paddingLeft: '35px'}}>{props.skillsFormatted}</p>
     </div>
   </main>
 )
@@ -62,7 +62,7 @@ const Footer = () => (
 const app = (
   <div className='app'>
     <Header />
-    <Main />
+    <Main skillsFormatted={skillsFormatted} />
     <Footer />
   </div>
 )
